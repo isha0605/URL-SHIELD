@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Pop HTML CSS Template</title>
+<!--
+
+Template 2097 Pop
+
+https://www.tooplate.com/view/2097-pop
+
+-->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- load CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/tooplate-style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css')}}"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300">  <!-- Google web font "Open Sans" -->
+        <link rel="stylesheet" href="static/css/bootstrap.min.csss">                                  <!-- https://getbootstrap.com/ -->
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/fontawesome/css/fontawesome-all.min.css')}}"/>
+        <link rel="stylesheet" href="static/fontawesome/css/fontawesome-all.min.css">                <!-- https://fontawesome.com/ -->
+        <link rel="stylesheet" type="text/css" href="static/slick/slick.css"/>                       <!-- http://kenwheeler.github.io/slick/ -->
+        <link rel="stylesheet" type="text/css" href="static/slick/slick-theme.csss"/>
+        <link rel="stylesheet" href="static/css/tooplate-style.css">  
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
+
+
+    <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this in a modern browser such as latest version of Chrome or Microsoft Edge.");</script>
+    
+</head>
+
+<body>
+    <div id="tm-bg"></div>
+    <div id="tm-wrap">
+        <div class="tm-main-content">
+            <div class="container tm-site-header-container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6 col-md-col-xl-6 mb-md-0 mb-sm-4 mb-4 tm-site-header-col">
+                        <div class="tm-site-header" style="float: left; width: 80%;">
+                            <h1 class="mb-4">URL Shield</h1>
+                            <img src="{{ url_for('static', filename='img/underline.png') }}" class="img-fluid mb-4">
+                            <form method="POST" action="/predict" id="search-url">
+                                
+                                <div class="form-group">
+                                    
+                                    <b><label for="url" class="form-control-label">Search</label></b>
+                                    <input type="text" name="input_url" id="input_url" class="form-control", required, style="font-family: 'Open Sans', sans-serif;background-color:#ffffff;margin-bottom: 10px;border: 2px solid #aed2c7;color: #05192d;width: 400px;height: 40px;">
+                                </div>
+                                <button type="submit" class="btn btn-primary", style="font-family: 'Open Sans', sans-serif;background-color: #1d5763; color: #fff;border: 3px solid #aed2c7;border-radius: 15px;padding: 10px 20px; font-size: 16px; cursor: pointer;transition: background-color 0.3s;transition: background-color 0.3s;">Submit</button>
+                                
+                            </form>
+                            <br/><br/>
+                            {% if prediction %}
+                                <h2 style="color:gold; font-family: Arial, sans-serif;">URL:</h2>
+                                <p class="result" style="font-weight: bold; font-style: italic; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px #000;">{{ url }}</p>
+                                
+                                <h2 style="color:gold; font-family: Arial, sans-serif;">Prediction Result:</h2>
+                                <p class="result" style="font-weight: bold; font-style: italic; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px #000;">{{ prediction }}</p>
+                                
+                            {% endif %}
+                            
+                            
+                        </div>                       
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <div class="content">
+                            <div class="grid">
+                                <div class="grid__item" id="home-link">
+                                    <div class="product">
+                                        <div class="tm-nav-link">
+                                            <i class="fas fa-home fa-3x tm-nav-icon"></i>
+                                            <span class="tm-nav-text">Welcome</span>
+                                            <div class="product__bg"></div>        
+                                        </div>                                    
+                                        <div class="product__description">
+                                            <div class="row mb-3">
+                                                <div class="col-12">
+                                                    <h2 class="tm-page-title">🔒 Welcome to URL Shield – Your Ultimate Guardian Against Online Threats!
+                                                    </h2>        
+                                                </div>
+                                            </div>                                        
+                                            <div class="row">
+                                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                                    <img src="static/img/welcome-1.jpg" class="img-fluid mb-3">
+                                                    <b style="font-size:17px; font-family:'Open Sans', sans-serif; font-weight: bold;">💡 Why Choose URL Shield?</b>
+                                                    <p style="font-size:14px; font-family:'Open Sans';">More than a security service, URL Shield is your digital ally. We envision a world where you can surf, click, and explore without fear.</p>
+                                                    <p style="font-size:14px; font-family:'Open Sans';"> Our mission is to empower you with the tools and knowledge for a safe online journey.</p>  
+                                                    
+                                                    <b style="font-size:17px; font-family:'Open Sans', sans-serif; font-weight: bold;">🌐 Experience the Future of Online Security with URL Shield</b>
+                                                    <p style="font-size:14px; font-family:'Open Sans';">Imagine a seamless online experience where you don't have to worry about malicious links disrupting your digital life.</p>
+                                                    <p style="font-size:14px; font-family:'Open Sans';"> URL Shield goes beyond a service; it's your assurance of a secure online journey.</p>  
+
+                                                </div>
+
+
+                                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                                    <p style="font-size:14px; font-family:'Open Sans';">At URL Shield, we recognize the digital landscape's inherent risks. In a world where cyber threats constantly evolve, we stand as your first line of defense, ensuring a secure online experience.</p>
+                                                    <p><b style="font-size:17px; font-family:'Open Sans', sans-serif; font-weight: bold;">🚨 Stay Ahead of Cyber Threats: Unveiling the Power of URL Shield's Detection Services</b></p>
+                                                    <p style="font-size:14px; font-family:'Open Sans';">In the fast-paced internet realm, having a shield that identifies and neutralizes malicious URLs in real-time is crucial. URL Shield's cutting-edge technology acts as a sentinel, providing unparalleled protection against evolving cyber threats.</p>
+                                                    
+
+                                                    <video class="img-fluid" controls onmouseover="playVideo()">
+                                                        <source src="static/img/Phishing_URL_Prediction.mp4" type="video/mp4">
+                                                        Your browser does not support the video tag.
+                                                    </video>
+                                                    
+                                                    <script>
+                                                        function playVideo() {
+                                                            var video = document.querySelector('.img-fluid');
+                                                            video.play();
+                                                        }
+                                                    </script>
+                                                </div>                                        
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="grid__item" id="team-link">
+                                    <div class="product">
+                                        <div class="tm-nav-link">
+                                            <i class="fas fa-users fa-3x tm-nav-icon"></i>
+                                            <span class="tm-nav-text">Our Team</span>
+                                            <div class="product__bg"></div>            
+                                        </div>                                     
+                                        <div class="product__description">
+                                            <div class="p-sm-4 p-2">
+                                                <div class="row mb-3">
+                                                    <div class="col-12">
+                                                        <h2 class="tm-page-title">Background of Our Team</h2>        
+                                                    </div>
+                                                </div>
+                                                <div class="row tm-reverse-sm">
+                                                    <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                                        <p class="mb-4">Welcome to the team behind <b>URL Shield</b>, your go-to platform for phishing URL detection.</p>
+                                                        <p class="mb-4"> We are a dedicated group of professionals passionate about cybersecurity and committed to creating a safer online environment.</p>
+                                                        <b style="font-size:17px; font-family:'Open Sans', sans-serif; font-weight: bold;">Why We Do It:?</b>
+                                                        <p class="mb-5">We believe in the power of collaboration to combat online threats. Our team joined forces to build a platform that empowers users to identify and avoid phishing URLs, contributing to a more secure digital space.
+                                                            <br>
+                                                            <br>   
+                                                         <b style="font-size:17px; font-family:'Open Sans', sans-serif; font-weight: bold;">Values We Uphold:</b>
+                                                         <br>   Transparency, user privacy, and continuous improvement are at the core of our values. We strive to provide a trustworthy and effective service.</p>
+                                                         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+                                                         <script>
+                                                           $(document).ready(function () {
+                                                           $(".btn.tm-btn-gray").click(function () {
+                                                            $("#read-more").toggle();
+                                                             });
+                                                             });
+                                                         </script>
+                                                         <!-- Add data-target and data-toggle attributes for Bootstrap modal -->
+                                                          <a href="#" class="btn tm-btn-gray" data-toggle="modal" data-target="#read-more">Read More</a>
+
+       
+                                                    </div>                                                
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-lg-0 mb-sm-4 mb-4">
+                                                        <img src="static/img/team.jpg" class="img-fluid">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+                                <div class="grid__item">
+                                    <div class="product">
+                                        <div class="tm-nav-link">
+                                            <i class="fas fa-handshake fa-3x tm-nav-icon"></i>
+                                            <span class="tm-nav-text">Security Guide</span>
+                                            <div class="product__bg"></div>             
+                                        </div>                                                                 
+                                        <div class="product__description">
+                                            <div class="p-sm-4 p-2">
+                                                <div class="row mb-3">
+                                                    <div class="col-12">
+                                                        <h2 class="tm-page-title">Security Guide: Protect Yourself Online</h2>        
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-12">
+                                                        <p>Welcome to our Security Guide, your go-to resource for staying safe online! 
+                                                            In today's digital age, it's crucial to be vigilant and informed about potential online threats. 
+                                                            This guide is designed to empower you with the knowledge and skills needed to identify malicious 
+                                                            URLs, avoid phishing attempts, and enhance your overall online security.</p>
+                                                    </div>
+                                                </div>
+                                                <style type="text/css">
+                                                    .image-container {
+                                                     display: flex; /* Use flexbox to arrange images in a row */
+                                                    } 
+
+                                                    .img-fluid {
+                                                     max-width: 50%; /* Ensure images don't exceed their container width */
+                                                     height: auto; /* Maintain the aspect ratio of the images */
+                                                     margin-right: 10px; /* Add some spacing between the images */
+                                                    }
+                                                </style>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="p-sm-4 p-2 tm-img-container">
+                                                            <div class="image-container">
+                                                              <img src="static/img/Image1.jpg" alt="Image 1" class="img-fluid tm-slider-img">
+                                                              <img src="static/img/Image2.jpg" alt="Image 2"class="img-fluid tm-slider-img">
+                                                            </div> 
+                                                            <br>
+                                                            <br>
+                                                            <div class="image-container">
+                                                              <img src="static/img/Image3.jpg" alt="Image 3" class="img-fluid tm-slider-img">
+                                                              <img src="static/img/Image4.jpg" alt="Image 4" class="img-fluid tm-slider-img">
+                                                            </div>
+                                                            </div>  
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>       
+                                    </div>
+                                
+                                  
+
+                                <div class="grid__item">
+                                    <div class="product">
+                                        <div class="tm-nav-link">
+                                            <i class="fas fa-comments fa-3x tm-nav-icon"></i>
+                                            <span class="tm-nav-text">Report</span>
+                                            <div class="product__bg"></div>             
+                                        </div>                                                              
+                                        <div class="product__description">
+                                            <div class="pt-sm-4 pb-sm-4 pl-sm-5 pr-sm-5 pt-2 pb-2 pl-3 pr-3">
+                                                <div class="row mb-3">
+                                                    <div class="col-12">
+                                                        <h2 class="tm-page-title">Report a website</h2>        
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-4">
+                                                    <div class="col-12">
+                                                        <p>Report the wbsite so that we can train and improve our model more effeciently </p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <form action="/submit_contact_form" method="post" class="contact-form">
+                                                            <div class="row">
+                                                                <div class="form-group col-md-6 col-lg-6 col-xl-6">
+                                                                  <input type="text" id="email" name="email" class="form-control" placeholder="Phishing Website URL"  required/>
+                                                                </div>
+                                                                <div class="form-group col-md-6 col-lg-6 col-xl-6 tm-col-email">
+                                                                  <input type="email" id="phishimg website" name="phishing_website" class="form-control" placeholder="Email"  required/>
+                                                                </div>
+                                                            </div>                                                        
+                                                            <div class="form-group">
+                                                              <textarea id="description" name="description" class="form-control" rows="9" placeholder="Enter Description" required></textarea>
+                                                            </div>
+                                                            <button type="submit" class="btn btn-primary tm-btn-submit" onclick="submit_contact_form()">Submit</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>                       
+                    </div>
+                </div>                
+            </div>
+            <footer>
+                <p class="small tm-copyright-text">Copyright &copy; <span class="tm-current-year">2024</span>  URL Shield. 
+            </footer>
+        </div> <!-- .tm-main-content -->  
+    </div>
+    <!-- load JS -->
+   <!-- load JS -->
+    <script type="text/javascript" src="{{ url_for('static',filename='js/main.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/anime.min.js')}}"></script><!-- http://animejs.com/ -->
+    <script type="text/javascript" src="{{ url_for('static',filename='js/jquery-3.2.1.slim.min.js')}}"></script><!-- https://jquery.com/ -->   
+    <script type="text/javascript" src="{{ url_for('static',filename='slick/slick.min.js')}}"></script>       
+    <!--<script src="slick/slick.min.js"></script>-->                  <!-- http://kenwheeler.github.io/slick/ -->  
+    <script>      
+
+        function validateForm() {
+        var urlInput = document.getElementById('input_url').value.trim();
+        if (urlInput === '') {
+            alert("Input field can not be empyt");
+            return false; // Prevent form submission
+        }
+        return true; // Allow form submission
+    }
+        function setupFooter() {
+            var pageHeight = $('.tm-site-header-container').height() + $('footer').height() + 100;
+
+            var main = $('.tm-main-content');
+
+            if($(window).height() < pageHeight) {
+                main.addClass('tm-footer-relative');
+            }
+            else {
+                main.removeClass('tm-footer-relative');   
+            }
+        }
+
+        /* DOM is ready
+        ------------------------------------------------*/
+        $(function(){
+
+            setupFooter();
+
+            $(window).resize(function(){
+                setupFooter();
+            });
+
+            $('.tm-current-year').text(new Date().getFullYear());  // Update year in copyright           
+        });
+
+    </script>             
+
+</body>
+</html>
